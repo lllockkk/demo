@@ -23,7 +23,9 @@ public class App
         cs.setWrapText(true);
         font.setBold(true);
         font.setColor((short)0xff);
+
         Sheet sheet = wb.createSheet("报表");
+        sheet.autoSizeColumn(2);
         Row row = sheet.createRow(0);
         for (int i=0; i<10; i++) {
             Cell cell = row.createCell(i);
