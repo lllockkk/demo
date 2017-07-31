@@ -1,20 +1,7 @@
 package com.placeholder;
 
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.ss.util.WorkbookUtil;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Hello world!
@@ -22,24 +9,20 @@ import java.util.regex.Pattern;
  */
 public class App 
 {
-    public static void main( String[] args ) {
-        String regex = "http://angularjs.cn/api/article/latest\\?(p=\\d+&)?s=20";
-        String text = "http://angularjs.cn/api/article/latest?s=20";
-        boolean flag = text.matches(regex);
-        System.out.println(flag);
-
+    public static void main( String[] args ) throws ReflectiveOperationException {
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < 300000; i++)
+        {
+            Test test = new Test();
+            if (!list.contains(test.hashCode()))
+                list.add(test.hashCode());
+        }
+        System.out.println(list.size());
     }
 
 }
 
 class Test {
-    static A a = new A(1);
-    static {
-        a = new A(2);
-    }
-    public Test() {
-        System.out.println(a.i);
-    }
 
 }
 
