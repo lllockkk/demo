@@ -9,6 +9,7 @@
     <module>demo</module>
       <module>spider</module>
       <module>springmvc</module>
+      <module>javaweb</module>
   </modules>
   <name>Maven Quick Start Archetype</name>
   <url>http://maven.apache.org</url>
