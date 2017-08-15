@@ -1,5 +1,6 @@
 package com.cooolin.javeweb.web.servlet;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,16 @@ import java.util.Map;
  */
 @WebServlet(name="annotation",urlPatterns="/annotation")
 public class AnnotationServlet extends HttpServlet {
+    @Override
+    public void init() throws ServletException {
+        System.out.println("init AnnotationServlet");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("destroy AnnotationServlet");
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println(req.getCharacterEncoding());

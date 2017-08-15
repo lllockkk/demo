@@ -1,35 +1,45 @@
 package com.placeholder;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.activemq.ActiveMQConnection;
+import org.apache.activemq.ActiveMQConnectionFactory;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ) throws ReflectiveOperationException {
-        List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < 300000; i++)
-        {
-            Test test = new Test();
-            if (!list.contains(test.hashCode()))
-                list.add(test.hashCode());
-        }
-        System.out.println(list.size());
+import javax.jms.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Hashtable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
     }
-
 }
 
-class Test {
+class Test implements A, B {
+    @Override
+    public void test() {
 
+    }
+
+    @Override
+    public void a() {
+
+    }
+
+    @Override
+    public void b() {
+
+    }
 }
 
-class A {
-    int i;
-    A(int i) {
-        this.i = i;
-        System.out.println("A: " + i);
-    }
+interface A {
+    void test();
+    void a();
+}
+
+interface B {
+    int test();
+    void b();
 }

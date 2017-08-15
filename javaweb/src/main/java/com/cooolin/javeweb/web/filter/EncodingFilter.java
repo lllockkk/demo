@@ -3,6 +3,7 @@ package com.cooolin.javeweb.web.filter;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
 
 /**
  * Created by l on 17-8-1.
@@ -11,7 +12,7 @@ import java.io.IOException;
 public class EncodingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        System.out.println("init EncodingFilter");
     }
 
     @Override
@@ -23,6 +24,6 @@ public class EncodingFilter implements Filter {
 
     @Override
     public void destroy() {
-
+        System.out.println("destroy EncodingFilter");
     }
 }
