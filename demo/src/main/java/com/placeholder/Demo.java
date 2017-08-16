@@ -2,7 +2,7 @@ package com.placeholder;
 
 import java.io.*;
 
-public class App {
+public class Demo {
 
 }
 
