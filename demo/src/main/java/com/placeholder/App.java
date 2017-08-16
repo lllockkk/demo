@@ -1,45 +1,22 @@
 package com.placeholder;
 
-import org.apache.activemq.ActiveMQConnection;
-import org.apache.activemq.ActiveMQConnectionFactory;
-
-import javax.jms.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Hashtable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.io.*;
 
 public class App {
-    public static void main(String[] args) throws Exception {
 
+}
+
+class BasicFileOutput {
+    public static void main(String[] args) throws IOException {
+        String src = "hello\nworld";
+        BufferedReader br = new BufferedReader(new StringReader(src));
+        String line;
+        int counter = 1;
+
+        while ((line = br.readLine()) != null) {
+            System.out.println(counter++ + ": " + line);
+        }
     }
 }
 
-class Test implements A, B {
-    @Override
-    public void test() {
 
-    }
-
-    @Override
-    public void a() {
-
-    }
-
-    @Override
-    public void b() {
-
-    }
-}
-
-interface A {
-    void test();
-    void a();
-}
-
-interface B {
-    int test();
-    void b();
-}
