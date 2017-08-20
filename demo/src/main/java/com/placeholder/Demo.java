@@ -1,22 +1,47 @@
 package com.placeholder;
 
+
 import java.io.*;
+import java.nio.channels.FileChannel;
+import java.util.prefs.Preferences;
 
 public class Demo {
+    private static String filepath = "C:/Users/L/Desktop/data.txt";
+    private static String path = "C:/Users/L/Desktop/";
+    private static int length = 0x8000000;
+    private static FileChannel fc;
 
-}
-
-class BasicFileOutput {
-    public static void main(String[] args) throws IOException {
-        String src = "hello\nworld";
-        BufferedReader br = new BufferedReader(new StringReader(src));
-        String line;
-        int counter = 1;
-
-        while ((line = br.readLine()) != null) {
-            System.out.println(counter++ + ": " + line);
-        }
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+        Preferences system = Preferences.systemRoot();
+        Preferences user = Preferences.userRoot();
+        System.out.println(user);
     }
 }
+
+class Obj implements Serializable {
+    public static int i = 1;
+    public Obj() {
+        i = 2;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
