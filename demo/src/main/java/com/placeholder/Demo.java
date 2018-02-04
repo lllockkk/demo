@@ -3,6 +3,10 @@ package com.placeholder;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Timer;
 import java.util.prefs.Preferences;
 
 public class Demo {
@@ -18,12 +22,6 @@ public class Demo {
     }
 }
 
-class Obj implements Serializable {
-    public static int i = 1;
-    public Obj() {
-        i = 2;
-    }
-}
 
 
 
