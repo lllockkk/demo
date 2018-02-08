@@ -14,6 +14,7 @@ public class Question1 {
     }
 }
 class Flag {
+    // todo 加上 volatile 字段可以停止运行
     private boolean run = true;
     public boolean isRun() {
 //        System.out.println("test"); // todo 注释掉该语句就不会停止运行Task

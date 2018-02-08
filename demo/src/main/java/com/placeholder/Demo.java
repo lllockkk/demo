@@ -1,8 +1,11 @@
 package com.placeholder;
 
 
+import sun.misc.Launcher;
+
 import java.io.*;
 import java.nio.channels.FileChannel;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,9 +19,11 @@ public class Demo {
     private static FileChannel fc;
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
-        Preferences system = Preferences.systemRoot();
-        Preferences user = Preferences.userRoot();
-        System.out.println(user);
+        ClassLoader classLoader = Demo.class.getClassLoader();
+
+//        Preferences system = Preferences.systemRoot();
+//        Preferences user = Preferences.userRoot();
+//        System.out.println(user);
     }
 }
 
