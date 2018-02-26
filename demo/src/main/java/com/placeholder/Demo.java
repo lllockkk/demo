@@ -1,29 +1,17 @@
 package com.placeholder;
 
 
-import sun.misc.Launcher;
-
-import java.io.*;
-import java.nio.channels.FileChannel;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.List;
-import java.util.Timer;
-import java.util.prefs.Preferences;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 public class Demo {
-    private static String filepath = "C:/Users/L/Desktop/data.txt";
-    private static String path = "C:/Users/L/Desktop/";
-    private static int length = 0x8000000;
-    private static FileChannel fc;
+    public static void main(String[] args) {
 
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
-        ClassLoader classLoader = Demo.class.getClassLoader();
-
-//        Preferences system = Preferences.systemRoot();
-//        Preferences user = Preferences.userRoot();
-//        System.out.println(user);
     }
 }
 
