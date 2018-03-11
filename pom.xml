@@ -11,6 +11,7 @@
       <module>springmvc</module>
       <module>javaweb</module>
       <module>htmlunit</module>
+      <module>dubbo</module>
   </modules>
   <name>Maven Quick Start Archetype</name>
   <url>http://maven.apache.org</url>
