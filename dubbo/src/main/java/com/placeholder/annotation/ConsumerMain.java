@@ -14,9 +14,6 @@ import com.placeholder.xml.service.DemoService;
  */
 public class ConsumerMain {
     public static void main(String[] args) {
-        Invoker;
-        Invocation;
-        LoadBalance;
-        Directory;
+
     }
 }

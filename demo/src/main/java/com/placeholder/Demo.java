@@ -1,66 +1,45 @@
 package com.placeholder;
 
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.state.SessionState;
+import org.apache.activemq.usage.StoreUsage;
+import org.springframework.jms.core.JmsTemplate;
+import redis.clients.jedis.*;
 
-import fi.iki.elonen.NanoHTTPD;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.*;
+import javax.jms.*;
+import javax.jms.Connection;
+import java.lang.annotation.*;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.OptionalInt;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-public class Demo extends NanoHTTPD {
-    public Demo() throws IOException {
-        super(8080);
-        start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
-        System.out.println("\nRunning! Point your browsers to http://localhost:8080/ \n");
-    }
-
+public class Demo {
     public static void main(String[] args) {
-        try {
-            new Demo();
-        } catch (IOException ioe) {
-            System.err.println("Couldn't start server:\n" + ioe);
-        }
-    }
-
-    @Override
-    public Response serve(IHTTPSession session) {
-        String msg = "<html><body><h1>Hello server</h1>\n";
-        Map<String, String> parms = session.getParms();
-        if (parms.get("username") == null) {
-            msg += "<form action='?' method='get'>\n  <p>Your name: <input type='text' name='username'></p>\n" + "</form>\n";
-        } else {
-            msg += "<p>Hello, " + parms.get("username") + "!</p>";
-        }
-        return newFixedLengthResponse(msg + "</body></html>\n");
+        boolean flag = C.class.isAnnotationPresent(A.class);
+        C.class.getAnnotations();
+        System.out.println(flag);
     }
 }
 
+@B
+class C {
 
+}
 
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+@interface A {
 
+}
 
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+@A
+@interface B {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
