@@ -1,5 +1,6 @@
 package com.placeholder.rabbitmq.work_queue;
 
+import com.placeholder.rabbitmq.Utils;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -11,8 +12,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Worker {
     public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        ConnectionFactory factory = Utils.getConnectionFactory();
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(NewTask.QUEUE_NAME, true, false, false, null);

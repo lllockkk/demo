@@ -16,30 +16,25 @@ import java.util.concurrent.TimeUnit;
 
 public class Demo {
     public static void main(String[] args) {
-        boolean flag = C.class.isAnnotationPresent(A.class);
-        C.class.getAnnotations();
-        System.out.println(flag);
+        ExecutorService executor = Executors.newCachedThreadPool();
+        A a = new A();
+        executor.submit(a::a);
+
+        executor.submit(a::a);
     }
 }
 
-@B
-class C {
-
-}
-
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Inherited
-@interface A {
-
-}
-
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Inherited
-@A
-@interface B {
-
+class A {
+    public synchronized void a() {
+        while (true) {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println(Thread.currentThread() + " hello");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
 
 

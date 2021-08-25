@@ -94,7 +94,7 @@ class Teller implements Runnable, Comparable<Teller> {
 
                 synchronized (this) {
                     serveCount++;
-                    while (isServe)
+                    while (!isServe)
                         wait();
                 }
             }

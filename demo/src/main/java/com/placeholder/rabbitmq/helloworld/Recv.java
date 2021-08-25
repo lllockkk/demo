@@ -1,5 +1,6 @@
 package com.placeholder.rabbitmq.helloworld;
 
+import com.placeholder.rabbitmq.Utils;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -7,8 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 public class Recv {
     public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        ConnectionFactory factory = Utils.getConnectionFactory();
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare("hello", false, false, false, null);

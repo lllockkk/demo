@@ -25,10 +25,11 @@ class Sleeper extends Thread {
 
     public void run() {
         try {
+            System.out.println(getName() + " run");
             sleep(duration);
             System.out.println(getName() + " has awakened up");
         } catch (InterruptedException e) {
-            System.out.println("sleep interrupt");
+            System.out.println(getName() + " sleep interrupt");
         }
     }
 }

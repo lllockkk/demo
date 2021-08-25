@@ -11,6 +11,8 @@ import java.util.concurrent.*;
 
 /**
  * Created by L on 2017/8/7.
+ * sleep 是可中断阻塞
+ * io和synchronized是不可中断阻塞，即调用interrupte，不会终止线程
  */
 public class _15Interrupting {
     private static ExecutorService executor = Executors.newCachedThreadPool();
